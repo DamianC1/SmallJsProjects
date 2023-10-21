@@ -11,14 +11,27 @@ let celsius;
 
 const celsiusChanger = () => {
 	farenheit = converter.value * 1.8 + 32;
-	text.textContent = `${converter.value}°C to ${farenheit}°F`;
+	text.textContent = `${converter.value}°C to ${farenheit.toFixed(1)}°F`;
+	converter.value = '';
 };
 
 const farenheitConverter = () => {
-	celsius = ((converter.value - 32) / 2) * 1.1;
-	console.log(celsius);
+	celsius = (converter.value - 32) / 1.8;
+	text.textContent = `${converter.value}°F to ${celsius.toFixed(1)}°C`;
+	converter.value = '';
 };
 
+const degreeConvert = () => {
+	if (converter.value === '') {
+		text.textContent = 'Podaj wartość';
+	} else {
+		if (one.textContent === '°C') {
+			celsiusChanger();
+		} else {
+			farenheitConverter();
+		}
+	}
+};
 const degreeChange = () => {
 	if (one.textContent === '°C' && two.textContent === '°F') {
 		one.textContent = '°F';
@@ -29,5 +42,13 @@ const degreeChange = () => {
 	}
 };
 
+const resetting = () => {
+	text.textContent = '';
+	converter.value = '';
+};
+//zmiana button
 change.addEventListener('click', degreeChange);
-conv.addEventListener('click', celsiusChanger);
+//konwertuj button
+conv.addEventListener('click', degreeConvert);
+//reset button
+reset.addEventListener('click', resetting);
