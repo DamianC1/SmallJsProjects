@@ -1,5 +1,7 @@
 const currentDay = document.querySelector('.current-day');
 const funFact = document.querySelector('.fun-fact');
+const day = new Date();
+currentDay.textContent = day.toLocaleDateString('pl', { weekday: 'long' });
 
 const facts = [
 	'Krokodyl nie potrafi wystawić języka.',
@@ -11,3 +13,6 @@ const facts = [
 	'Chińczycy w ciągu roku zużywają około 80 miliardów pałeczek.',
 	'Żeby wejść na Wieżę Eiffla trzeba pokonać aż 1710 stopni.',
 ];
+const randomFact = facts[Math.floor(Math.random() * facts.length)];
+console.log(randomFact);
+funFact.textContent = randomFact;
