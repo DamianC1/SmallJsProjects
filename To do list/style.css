@@ -75,16 +75,16 @@ h1 {
 	background-color: var(--light-dark);
 }
 
-.todolist {
+.toDoList {
 	padding: 20px 0;
 }
 
-.todolist h3 {
+.toDoList h3 {
 	text-transform: uppercase;
 	margin-bottom: 16px;
 }
 
-.todolist li {
+.toDoList li {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
