@@ -13,6 +13,5 @@ const facts = [
 	'Chińczycy w ciągu roku zużywają około 80 miliardów pałeczek.',
 	'Żeby wejść na Wieżę Eiffla trzeba pokonać aż 1710 stopni.',
 ];
-const randomFact = facts[Math.floor(Math.random() * facts.length)];
-console.log(randomFact);
+const randomFact = facts[Math.floor(Math.random() * facts.length - 1)];
 funFact.textContent = randomFact;
