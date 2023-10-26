@@ -146,6 +146,10 @@ h1 {
 	border-radius: 5px;
 }
 
+.showw {
+	display: flex;
+}
+
 .popup h3 {
 	padding: 20px;
 }
