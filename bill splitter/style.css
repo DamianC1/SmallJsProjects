@@ -13,7 +13,6 @@ body {
 }
 
 .wrapper {
-	border: 1px solid black;
 	width: 400px;
 	box-shadow: 0 0 10px black;
 	border-radius: 5px;
@@ -24,30 +23,54 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	background-color: limegreen;
-	color: white;
 	height: 150px;
+	background-color: #00ba40;
+	color: white;
+}
+.top > p {
+	margin-top: 5px;
 }
 
 .bottom {
-	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	padding: 40px 20px;
 }
 
-.bottom > p {
-	padding: 10px;
+label {
+	margin-bottom: 10px;
 }
 
 input,
 select {
-	width: 100%;
+	margin-bottom: 10px;
+	padding: 5px 0;
 }
 
-button {
-	display: block;
+.count {
+	padding: 20px 60px;
 	margin: 20px auto;
-	padding: 20px 80px;
-	background-color: limegreen;
-	color: white;
+	background-color: #00ba40;
 	border: none;
+	color: white;
 	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.count:hover {
+	background-color: rgb(0, 168, 59);
+}
+
+.cost-info {
+	display: none;
+	margin: 10px auto;
+	font-size: 20px;
+}
+
+.error {
+	display: none;
+	color: red;
+	margin: 10px auto;
+	font-size: 20px;
 }
