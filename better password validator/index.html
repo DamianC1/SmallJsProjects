@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="top">
+            <h1>Zarejestruj się !</h1>
+        </div>
+        <div class="bottom">
+            <div class="form-box">
+                <label for="user-name">Nazwa użytkownika:</label>
+                <input type="text" id="user-name" placeholder="Podaj nazwę użytkownika">
+                <p class="error">error</p>
+            </div>
+            <div class="form-box">
+                <label for="user-password">Hasło:</label>
+                <input type="text" id="user-password" placeholder="Podaj hasło">
+                <p class="error">error</p>
+            </div>
+            <div class="form-box">
+                <label for="repeat-password">Powtórz hasło:</label>
+                <input type="text" id="repeat-password" placeholder="Powtórz hasło">
+                <p class="error">error</p>
+            </div>
+            <div class="form-box">
+                <label for="user-email">Adres e-mail:</label>
+                <input type="text" id="user-email" placeholder="Podaj adres e-mail">
+                <p class="error">error</p>
+            </div>
+            <div class="btns">
+                <button class="clear">Wyczyść</button>
+                <button class="submit">Wyślij</button>
+            </div>
+
+            <div class="popup">
+                <p>Formularz został poprawnie wysłany!</p>
+                <button class="close">zamknij</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
