@@ -54,6 +54,8 @@ button {
 	border: none;
 	background-color: #1e61e8;
 	color: white;
+	transition: background-color 0.3s;
+	cursor: pointer;
 }
 
 .clear {
@@ -65,5 +67,53 @@ label {
 }
 
 input {
-	padding: 5px 0;
+	padding: 10px;
+	border-radius: 5px;
+}
+.form-box.error input {
+	border: 1px solid rgb(0, 137, 250);
+	background-color: rgba(0, 137, 250, 0.1);
+}
+
+.form-box .error-text {
+	visibility: hidden;
+	margin-top: 5px;
+	color: rgb(0, 137, 250);
+}
+
+.form-box.error .error-text {
+	visibility: visible;
+}
+
+.popup {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	top: -300px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 600px;
+	height: 100px;
+	border: 2px solid black;
+	border-radius: 8px;
+	background-color: white;
+	transition: top 0.5s;
+}
+
+.popup > p {
+	font-size: 20px;
+}
+
+.close {
+	margin-top: 10px;
+}
+
+.show-popup {
+	top: 80px;
+}
+
+button:hover {
+	background-color: rgb(0, 107, 194);
 }
