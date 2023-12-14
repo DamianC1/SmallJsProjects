@@ -10,6 +10,18 @@ const closeBtn = document.querySelector('.close');
 
 // FUNCTIONS
 
+const checkLength = (input, min) => {
+	if (input.value.length < min) {
+		showError(input, `${input.previousElementSibling.innerText.slice(0, -1)} składa się minimum z ${min} znaków `);
+	}
+};
+
+const passwordWalidator = (passwrd1, passwrd2) => {
+	if (passwrd1.value !== passwrd2.value) {
+		showError(passwrd2, 'Hasła do siebie nie pasują');
+	}
+};
+
 const showError = (input, msg) => {
 	const formBox = input.parentElement;
 	const errorMsg = formBox.querySelector('.error-text');
@@ -36,6 +48,9 @@ sendBtn.addEventListener('click', e => {
 	e.preventDefault();
 
 	checkForm([userName, userPassword, repeatPassword, userEmail]);
+	checkLength(userName, 3);
+	checkLength(userPassword, 8);
+	passwordWalidator(userPassword, repeatPassword);
 });
 
 clearBtn.addEventListener('click', e => {
