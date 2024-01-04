@@ -29,7 +29,7 @@ const checkEmail = email => {
 	}
 };
 
-const passwordWalidator = (passwrd1, passwrd2) => {
+const passwordValidator = (passwrd1, passwrd2) => {
 	if (passwrd1.value !== passwrd2.value) {
 		showError(passwrd2, 'Hasła do siebie nie pasują');
 	}
@@ -76,7 +76,7 @@ sendBtn.addEventListener('click', e => {
 	checkForm([userName, userPassword, repeatPassword, userEmail]);
 	checkLength(userName, 3);
 	checkLength(userPassword, 8);
-	passwordWalidator(userPassword, repeatPassword);
+	passwordValidator(userPassword, repeatPassword);
 	checkEmail(userEmail);
 	checkErrors();
 });
