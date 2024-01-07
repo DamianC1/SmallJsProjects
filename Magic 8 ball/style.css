@@ -40,6 +40,7 @@ body {
 .ball-img img {
 	width: 300px;
 	margin-right: 90px;
+	cursor: pointer;
 }
 
 .question-area {
@@ -52,4 +53,28 @@ body {
 	border-radius: 5px;
 	padding: 5px 10px;
 	margin-top: 10px;
+}
+
+.shake-animation {
+	animation: shake 1s 1;
+}
+@keyframes shake {
+	0% {
+		margin-right: 150px;
+	}
+	20% {
+		margin-right: 50px;
+	}
+	40% {
+		margin-right: 150px;
+	}
+	60% {
+		margin-right: 50px;
+	}
+	80% {
+		margin-right: 150px;
+	}
+	100% {
+		margin-right: 90px;
+	}
 }
