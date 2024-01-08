@@ -55,6 +55,15 @@ body {
 	margin-top: 10px;
 }
 
+.answer {
+	margin-top: 10px;
+	font-size: 24px;
+}
+.error {
+	margin-top: 10px;
+	font-size: 24px;
+}
+
 .shake-animation {
 	animation: shake 1s 1;
 }
