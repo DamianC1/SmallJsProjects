@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d8fdf09b19.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <p class="info">
+            <i class="fas fa-question"></i>
+        </p>
+        <h1>Stopwatch</h1>
+        <p class="stopwatch">0:00</p>
+        <p class="time">0:00</p>
+        <div class="buttons">
+            <button class="start"><i class="fas fa-play"></i></button>
+            <button class="pause"><i class="fas fa-pause"></i></button>
+            <button class="stop"><i class="fas fa-stop"></i></button>
+            <button class="reset"><i class="fas fa-times"></i></button>
+            <button class="history">archives</button>
+        </div>
+
+        <ul class="time-list"></ul>
+    </div>
+
+    <div class="modal-shadow">
+        <div class="modal">
+            <h3>Instrukcja:</h3>
+            <p><i class="fas fa-play"></i> - start</p>
+            <p><i class="fas fa-pause"></i> - pause</p>
+            <p><i class="fas fa-stop"></i> - stop</p>
+            <p><i class="fas fa-times"></i> - delete everything (even with archives)</p>
+            <p><strong>Archives</strong>See previous time measurements</p>
+            <button class="close">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
