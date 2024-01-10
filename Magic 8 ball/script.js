@@ -20,12 +20,11 @@ const animation = () => {
 		pickAnswer();
 		input.value = '';
 		errorMsg.textContent = '';
-		image.classList.remove('shake-animation');
 	} else {
 		errorMsg.textContent = 'Musisz zadać pytanie';
 		message.textContent = '';
-		image.classList.remove('shake-animation');
 	}
+	image.classList.remove('shake-animation');
 };
 const pickAnswer = () => {
 	const answer = answers[Math.floor(Math.random() * answers.length)];
