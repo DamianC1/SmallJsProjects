@@ -33,9 +33,21 @@ const handleStart = () => {
 	}, 1000);
 };
 
+const handleStop = () => {
+	
+}
+
 const handlePause = () => {
 	clearInterval(countTime);
 };
 
+const handleReset = () => {
+	clearInterval(countTime);
+	stopwatch.textContent = '0:00';
+	seconds = 0;
+	minutes = 0;
+};
+
 startBtn.addEventListener('click', handleStart);
 pauseBtn.addEventListener('click', handlePause);
+resetBtn.addEventListener('click', handleReset);
