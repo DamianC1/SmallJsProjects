@@ -15,6 +15,7 @@ const modalShadow = document.querySelector('.modalShadow');
 let countTime;
 let minutes = 0;
 let seconds = 0;
+let timesArr = [];
 
 const handleStart = () => {
 	clearInterval(countTime);
@@ -34,14 +35,27 @@ const handleStart = () => {
 };
 
 const handleStop = () => {
-	
-}
+	time.innerHTML = `Ostatni czas: ${stopwatch.textContent}`;
+
+	if (stopwatch.textContent !== '0:00') {
+		time.style.visibility = 'visible';
+		timesArr.push(stopwatch.textContent);
+	}
+
+	clearStuff();
+};
 
 const handlePause = () => {
 	clearInterval(countTime);
 };
 
 const handleReset = () => {
+	time.style.visibility = 'hidden';
+	timesArr = [];
+	clearStuff();
+};
+
+const clearStuff = () => {
 	clearInterval(countTime);
 	stopwatch.textContent = '0:00';
 	seconds = 0;
@@ -50,4 +64,5 @@ const handleReset = () => {
 
 startBtn.addEventListener('click', handleStart);
 pauseBtn.addEventListener('click', handlePause);
+stopBtn.addEventListener('click', handleStop);
 resetBtn.addEventListener('click', handleReset);
