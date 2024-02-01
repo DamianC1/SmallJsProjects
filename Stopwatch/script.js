@@ -3,7 +3,7 @@ const startBtn = document.querySelector('.start');
 const pauseBtn = document.querySelector('.pause');
 const stopBtn = document.querySelector('.stop');
 const resetBtn = document.querySelector('.reset');
-const historyBtn = document.querySelector('.start');
+const historyBtn = document.querySelector('.history');
 const stopwatch = document.querySelector('.stopwatch');
 const infoBtn = document.querySelector('.info');
 const closeModalBtn = document.querySelector('.modal-shadow');
@@ -58,11 +58,26 @@ const handleReset = () => {
 const clearStuff = () => {
 	clearInterval(countTime);
 	stopwatch.textContent = '0:00';
+	timeList.textContent = '';
 	seconds = 0;
 	minutes = 0;
+};
+
+const showHistory = () => {
+	timeList.textContent = '';
+
+	let num = 1;
+
+	timesArr.forEach((time) => {
+		const newTime = document.createElement('li');
+		newTime.innerHTML = `Pomiar nr ${num} <span>${time}</span>`;
+		timeList.appendChild(newTime);
+		num++;
+	});
 };
 
 startBtn.addEventListener('click', handleStart);
 pauseBtn.addEventListener('click', handlePause);
 stopBtn.addEventListener('click', handleStop);
 resetBtn.addEventListener('click', handleReset);
+historyBtn.addEventListener('click', showHistory);
