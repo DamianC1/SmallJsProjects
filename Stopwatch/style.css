@@ -26,7 +26,11 @@ body {
 	flex-direction: column;
 	padding: 50px;
 	width: 800px;
-	background-color: radial-gradient(circle, rgb(43, 44, 46) 0%, rgb(25, 25, 25) 93%);
+	background-color: radial-gradient(
+		circle,
+		rgb(43, 44, 46) 0%,
+		rgb(25, 25, 25) 93%
+	);
 	border-radius: 5px;
 	box-shadow: 5px 5px 10px black;
 	color: #fff;
@@ -40,6 +44,7 @@ body {
 	font-size: 24px;
 	color: var(--second-color);
 	transition: color 0.3s;
+	cursor: pointer;
 }
 
 .info:hover {

@@ -6,11 +6,11 @@ const resetBtn = document.querySelector('.reset');
 const historyBtn = document.querySelector('.history');
 const stopwatch = document.querySelector('.stopwatch');
 const infoBtn = document.querySelector('.info');
-const closeModalBtn = document.querySelector('.modal-shadow');
+const closeModalBtn = document.querySelector('.close');
 
 const time = document.querySelector('.time');
 const timeList = document.querySelector('.time-list');
-const modalShadow = document.querySelector('.modalShadow');
+const modalShadow = document.querySelector('.modal-shadow');
 
 let countTime;
 let minutes = 0;
@@ -76,8 +76,22 @@ const showHistory = () => {
 	});
 };
 
+const showModal = () => {
+	if (!(modalShadow.style.display === 'block')) {
+		modalShadow.style.display = 'block';
+	} else {
+		modalShadow.style.display = 'none';
+	}
+	modalShadow.classList.toggle('modal-animation');
+};
+
 startBtn.addEventListener('click', handleStart);
 pauseBtn.addEventListener('click', handlePause);
 stopBtn.addEventListener('click', handleStop);
 resetBtn.addEventListener('click', handleReset);
 historyBtn.addEventListener('click', showHistory);
+infoBtn.addEventListener('click', showModal);
+closeModalBtn.addEventListener('click', showModal);
+window.addEventListener('click', (e) =>
+	e.target === modalShadow ? showModal() : false
+);
