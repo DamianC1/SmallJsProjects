@@ -5,7 +5,7 @@ const stopBtn = document.querySelector('.stop');
 const resetBtn = document.querySelector('.reset');
 const historyBtn = document.querySelector('.history');
 const stopwatch = document.querySelector('.stopwatch');
-const infoBtn = document.querySelector('.info');
+const infoBtn = document.querySelector('.fa-question');
 const closeModalBtn = document.querySelector('.close');
 
 const time = document.querySelector('.time');
@@ -16,6 +16,14 @@ let countTime;
 let minutes = 0;
 let seconds = 0;
 let timesArr = [];
+
+// ZMIANA KOLORÓW
+const colorBtn = document.querySelector('.fa-palette');
+const colorPalette = document.querySelector('.color-palette');
+const redColor = document.querySelector('.red');
+const greenColor = document.querySelector('.green');
+const blueColor = document.querySelector('.blue');
+let root = document.documentElement;
 
 const handleStart = () => {
 	clearInterval(countTime);
@@ -68,7 +76,7 @@ const showHistory = () => {
 
 	let num = 1;
 
-	timesArr.forEach((time) => {
+	timesArr.forEach(time => {
 		const newTime = document.createElement('li');
 		newTime.innerHTML = `Pomiar nr ${num} <span>${time}</span>`;
 		timeList.appendChild(newTime);
@@ -85,6 +93,23 @@ const showModal = () => {
 	modalShadow.classList.toggle('modal-animation');
 };
 
+//ZMIANA KOLORÓW
+const showPalette = () => {
+	colorPalette.classList.toggle('palette-animation');
+};
+const redColorChange = () => {
+	root.style.setProperty('--first-color', '#fa1006');
+	root.style.setProperty('--first-shadow-color', '#e2241a');
+};
+const greenColorChange = () => {
+	root.style.setProperty('--first-color', 'green');
+	root.style.setProperty('--first-shadow-color', '#016901');
+};
+const blueColorChange = () => {
+	root.style.setProperty('--first-color', 'royalblue');
+	root.style.setProperty('--first-shadow-color', '#3d5fc4');
+};
+
 startBtn.addEventListener('click', handleStart);
 pauseBtn.addEventListener('click', handlePause);
 stopBtn.addEventListener('click', handleStop);
@@ -92,6 +117,10 @@ resetBtn.addEventListener('click', handleReset);
 historyBtn.addEventListener('click', showHistory);
 infoBtn.addEventListener('click', showModal);
 closeModalBtn.addEventListener('click', showModal);
-window.addEventListener('click', (e) =>
-	e.target === modalShadow ? showModal() : false
-);
+window.addEventListener('click', e => (e.target === modalShadow ? showModal() : false));
+
+//ZMIANA KOLORÓW PRZYCISKI
+colorBtn.addEventListener('click', showPalette);
+redColor.addEventListener('click', redColorChange);
+greenColor.addEventListener('click', greenColorChange);
+blueColor.addEventListener('click', blueColorChange);

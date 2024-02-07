@@ -5,7 +5,8 @@
 }
 
 :root {
-	--first-color: #fa1406;
+	--first-color: #fa1006;
+	--first-shadow-color: #e2241a;
 	--second-color: #d2c7be;
 }
 
@@ -15,6 +16,7 @@ body {
 	justify-content: center;
 	flex-direction: column;
 	min-height: 100vh;
+	font-family: 'Montserrat', sans-serif;
 	background-color: #333;
 }
 
@@ -26,20 +28,16 @@ body {
 	flex-direction: column;
 	padding: 50px;
 	width: 800px;
-	background-color: radial-gradient(
-		circle,
-		rgb(43, 44, 46) 0%,
-		rgb(25, 25, 25) 93%
-	);
+	background-image: radial-gradient(circle, rgb(43, 44, 46) 0%, rgb(25, 25, 25) 93%);
 	border-radius: 5px;
 	box-shadow: 5px 5px 10px black;
 	color: #fff;
+	overflow: hidden;
 }
 
-.info {
+.info i {
 	position: absolute;
 	top: 6px;
-	right: 14px;
 	padding: 20px;
 	font-size: 24px;
 	color: var(--second-color);
@@ -47,8 +45,47 @@ body {
 	cursor: pointer;
 }
 
-.info:hover {
+.fa-palette {
+	right: 60px;
+}
+.fa-question {
+	right: 14px;
+}
+
+.info i:hover {
 	color: var(--first-color);
+}
+
+.color-palette {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	top: 150px;
+	right: -100px;
+	height: 150px;
+	position: absolute;
+	transition: right 0.3s;
+}
+
+.palette-animation {
+	right: 10px;
+}
+
+.color-palette .color-picker {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	cursor: pointer;
+	border: 3px solid black;
+}
+.color-palette .red {
+	background-color: red;
+}
+.color-palette .green {
+	background-color: green;
+}
+.color-palette .blue {
+	background-color: royalblue;
 }
 
 h1 {
@@ -66,6 +103,7 @@ h1 {
 	visibility: hidden;
 	color: var(--first-color);
 	font-size: 22px;
+	color: grey;
 }
 
 .buttons {
@@ -148,7 +186,7 @@ button:focus {
 	transition: background-color 0.3s;
 }
 .modal .close:hover {
-	background-color: rgb(226, 36, 26);
+	background-color: var(--first-shadow-color);
 }
 
 .modal-animation {
